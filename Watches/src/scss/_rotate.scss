@@ -1,0 +1,46 @@
+.rotate {
+   transition: 0.5s;
+}
+.block {
+   width: 400px;
+   height: 50px;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   .animate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: green;
+      border: 1px solid black;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      z-index: 2;
+   }
+   @for $i from 0 to 13 {
+      &:nth-child(#{$i}) {
+         .square {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            @if $i==7 or $i==8 or $i ==6 $i==5 or $i==4 {
+               transform: rotate(90deg);
+            }
+            @if $i==9 {
+               transform: rotate(0deg);
+            }
+            @if $i==3 {
+               transform: rotate(180deg);
+            }
+            @if $i==2 or $i==1 or $i==10 or $i==11 or $i==12 {
+               transform: rotate(-90deg);
+            }
+         }
+      }
+   }
+}

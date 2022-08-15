@@ -1,0 +1,12 @@
+@use 'sass:color';
+@use 'sass:map';
+
+@import 'reset';
+@import 'rotate';
+
+.container{
+   height:100vh;
+   display:flex;
+   justify-content:center;
+   align-items: center;
+}
